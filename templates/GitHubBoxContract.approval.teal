@@ -1,0 +1,42 @@
+#pragma version 10
+#pragma typetrack false
+
+// algopy.arc4.ARC4Contract.approval_program() -> uint64:
+main:
+    // templates/contract.py:3
+    // class GitHubBoxContract(ARC4Contract):
+    txn NumAppArgs
+    bz main_bare_routing@6
+    pushbytes 0x092269f2 // method "deposit(string)uint64"
+    txna ApplicationArgs 0
+    match main_deposit_route@3
+
+main_after_if_else@10:
+    // templates/contract.py:3
+    // class GitHubBoxContract(ARC4Contract):
+    pushint 0 // 0
+    return
+
+main_deposit_route@3:
+    // templates/contract.py:4
+    // @arc4.abimethod
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    pushbytes 0x151f7c750000000000000001
+    log
+    pushint 1 // 1
+    return
+
+main_bare_routing@6:
+    // templates/contract.py:3
+    // class GitHubBoxContract(ARC4Contract):
+    txn OnCompletion
+    bnz main_after_if_else@10
+    txn ApplicationID
+    !
+    assert // can only call when creating
+    pushint 1 // 1
+    return

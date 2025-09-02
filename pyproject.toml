@@ -34,10 +34,11 @@ networkx = "^3.4.2"
 # vendored mypy dependencies
 mypy_extensions = "^1.0.0"
 pathspec = ">=0.9"
+algorand-python = "^2.9.0"
+algopy = "^0.7.2"
 
 [tool.poetry.group.dev.dependencies]
 # include stubs distribution package as a dev dependency
-algorand-python = { path="stubs", develop=true }
 mypy = "1.17.0"
 ruff = "^0.7.4"
 pre-commit = "^4.0.1"
@@ -45,7 +46,7 @@ poethepoet = "^0.30.0"
 scriv = "^1.6.2"
 
 [tool.poetry.group.testing.dependencies]
-pytest = "^7.4.0"
+pytest = ">=8.2.2"
 pytest-xdist = {extras = ["psutil"], version = "^3.3.1"}
 py-algorand-sdk = "^2.4.0"
 algokit-utils = "^2.3.2"
