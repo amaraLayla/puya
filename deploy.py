@@ -5,7 +5,7 @@ from algosdk import account, mnemonic
 # === CONFIG ===
 ALGOD_ADDRESS = "https://testnet-api.algonode.cloud"
 ALGOD_TOKEN = ""  # No token needed for Algonode
-MNEMONIC = "junk frame cram pattern midnight include rice morning spoil family bright detect immune absent ugly acid seek busy hazard gift choice enrich camp absorb duty"
+MNEMONIC = "smooth car invite baby clown bone hurdle tower flavor purpose cover furnace defy beef avoid unable slide dynamic group coin lift stem title ability leopard"
 
 # === SETUP ===
 client = algod.AlgodClient(ALGOD_TOKEN, ALGOD_ADDRESS)
@@ -51,3 +51,5 @@ print(f"📤 Sent transaction: {txid}")
 response = wait_for_confirmation(client, txid, 4)
 app_id = response["application-index"]
 print(f"✅ Deployed to Testnet! Application ID: {app_id}")
+
+
