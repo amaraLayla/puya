@@ -36,6 +36,7 @@ mypy_extensions = "^1.0.0"
 pathspec = ">=0.9"
 algorand-python = "^2.9.0"
 algopy = "^0.7.2"
+pyteal = "^0.27.0"
 
 [tool.poetry.group.dev.dependencies]
 # include stubs distribution package as a dev dependency

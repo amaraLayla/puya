@@ -1,0 +1,19 @@
+#pragma version 2
+txn ApplicationID
+int 0
+==
+bnz main_l4
+txn OnCompletion
+int NoOp
+==
+bnz main_l3
+err
+main_l3:
+byte "github_handle"
+txna ApplicationArgs 0
+app_global_put
+int 1
+return
+main_l4:
+int 1
+return
